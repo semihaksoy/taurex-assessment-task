@@ -1,0 +1,81 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "react"
+    ],
+    "rules": {
+      "react/prop-types": "off",
+      "no-mixed-spaces-and-tabs": "warn",
+      "indent": [
+        "warn",
+        "tab"
+      ],
+      "linebreak-style": [
+        "warn",
+        "windows"
+      ],
+      "quotes": [
+        "warn",
+        "double"
+      ],
+      "semi": [
+        "warn",
+        "always"
+      ],
+      "react/react-in-jsx-scope": "off",
+      "no-multi-spaces": "warn",
+      "react/jsx-boolean-value": ["warn", "never"],
+      "react/self-closing-comp": ["warn", {
+        "component": true,
+        "html": false
+      }],
+      "react/jsx-tag-spacing": ["warn", {
+        "beforeSelfClosing": "always"
+      }],
+      "react/jsx-curly-spacing": ["warn", {
+        "when": "never",
+        "children": true,
+        "allowMultiline": true
+      }],
+      "jsx-a11y/alt-text": [ "warn", {
+        "elements": [ "img", "object", "area", "input[type=\"image\"]" ],
+        "img": ["Image"],
+        "object": ["Object"],
+        "area": ["Area"],
+        "input[type=\"image\"]": ["InputImage"]
+      }],
+      "react/jsx-wrap-multilines": ["warn", {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "parens-new-line",
+        "logical": "parens-new-line",
+        "prop": "parens-new-line"
+      }
+    ],
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }
+  
