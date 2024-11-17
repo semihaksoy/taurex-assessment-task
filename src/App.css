@@ -1,4 +1,4 @@
-body{
+body {
   padding: 20px;
   font-family: 'Roboto', sans-serif;
 }
@@ -14,12 +14,19 @@ body{
   font-size: 18px;
 }
 
-.button-container {
+.content-wrapper {
   display: flex;
-  justify-content: flex-end;
+  gap: 20px;
+}
+
+.content-wrapper > :first-child {
+  flex: 1;
+}
+
+.sticky-button-container {
   position: sticky;
-  top: 150px;
-  margin-bottom: 20px;
+  top: 20px;
+  align-self: flex-start;
 }
 
 .send-button {

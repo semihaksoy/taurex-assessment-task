@@ -4,7 +4,7 @@ import type { Employee } from "../types";
 type EmployeeTreeProps = {
   nodes: Employee[];
   selectedIds: Set<number>;
-  toggleSelect: (id: number, checked: boolean, node: Employee) => void;
+  toggleSelect: (checked: boolean, node: Employee) => void;
 };
 
 const EmployeeTree: React.FC<EmployeeTreeProps> = ({ nodes, selectedIds, toggleSelect }) => {
@@ -15,7 +15,7 @@ const EmployeeTree: React.FC<EmployeeTreeProps> = ({ nodes, selectedIds, toggleS
           <input
             type="checkbox"
             checked={selectedIds.has(node.Id)}
-            onChange={(e) => toggleSelect(node.Id, e.target.checked, node)}
+            onChange={(e) => toggleSelect(e.target.checked, node)}
           />
           {node.Name} - {node.Title}
         </label>

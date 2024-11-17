@@ -61,7 +61,7 @@ function App() {
   };
 
   const toggleSelect = useCallback(
-    (id: number, checked: boolean, node: Employee) => {
+    (checked: boolean, node: Employee) => {
       const updatedSelection = new Set(selectedIds);
 
       const updateParentSelection = (nodeId: number, managerId: number | null) => {
@@ -123,8 +123,13 @@ function App() {
       {loading ? (
         <div className="loading-message">Loading...</div>
       ) : (
-        <>
-          <div className="button-container">
+        <div className="content-wrapper">
+          <EmployeeTree
+            nodes={employeeTree}
+            selectedIds={selectedIds}
+            toggleSelect={toggleSelect}
+          />
+          <div className="sticky-button-container">
             <button
               onClick={sendSelectedIdsToServer}
               disabled={selectedIds.size === 0}
@@ -133,15 +138,11 @@ function App() {
               Send Selected IDs to Server
             </button>
           </div>
-          <EmployeeTree
-            nodes={employeeTree}
-            selectedIds={selectedIds}
-            toggleSelect={toggleSelect}
-          />
-        </>
+        </div>
       )}
     </div>
   );
+  
 }
 
 export default App;
